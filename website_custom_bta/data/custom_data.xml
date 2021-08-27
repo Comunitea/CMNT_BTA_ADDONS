@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding='UTF-8'?>
 <odoo>
-    <data>
+    <data noupdate="1">
         <!-- ir_config_parameter -->
         <record id="newsletter_mail_list_id" model="ir.config_parameter">
             <field name="key">website_custom_bta.list_id</field>
