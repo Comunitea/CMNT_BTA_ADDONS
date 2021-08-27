@@ -4,7 +4,7 @@
     "name": "Website Custom bytheacademy",
     "summary": "Customizations for bytheacademy",
     "version": "14.0.1.0.0",
-    "author": "Comunitea Servicios Informáticos S.L.",
+    "author": "Comunitea Servicios Tecnológicos S.L.",
     "website": "https://github.com/Comunitea/CMNT_BTA_ADDONS",
     "category": "Custom",
     "depends": [
