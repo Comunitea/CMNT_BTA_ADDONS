@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    © 2021 Comunitea
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <template id="payment_tokens_list_inherit" inherit_id="payment.payment_tokens_list" name="Website payment custom bytheacademy">
+        <xpath expr="//form/div[hasclass('card')]" position="after">
+            <div t-if="not order.partner_id.rgpd_acceptance" class="col-12 custom-control custom-checkbox float-right mt-2 oe_accept_cgv_button">
+                <input type="checkbox" id="checkbox_rgpd_acceptance" class="custom-control-input" required="required"/>
+                <label for="checkbox_rgpd_acceptance" class="custom-control-label">
+                    I agree to the <a target="_BLANK" href="/rgpd">terms of the RGPD</a>
+                </label>
+            </div>
+        </xpath>
+
+        <xpath expr="//button[@id='o_payment_form_pay']" position="attributes">
+            <attribute name="data-disabled_reasons">[true]</attribute>
+        </xpath>
+    </template>
+
+</odoo>

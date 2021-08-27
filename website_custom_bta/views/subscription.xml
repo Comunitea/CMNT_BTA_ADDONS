@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="subscription_successful" name="Subscription successful">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <section>
+                            <h1 class="text-center mt32">
+                                Subscription successful
+                            </h1>
+                        </section>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center mt64">
+                                <p> Thank you for subscribing to our newsletter</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+ 
+    </data>
+</odoo>
