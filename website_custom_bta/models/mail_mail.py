@@ -13,11 +13,16 @@ class MailMail(models.AbstractModel):
         get_param = self.env['ir.config_parameter'].sudo().get_param
         base_url = get_param('web.base.url')
         list_id = get_param('website_custom_bta.list_id')
+        email_to = partner.email if partner else self.email_to
+
+        if "<" in email_to or ">" in email_to:
+            open_tag = email_to.find('<')
+            email_to = email_to[open_tag:].replace('<', '').replace('>', '')
 
         newsletter_string = '<tr><td align="center" style="min-width: 590px; padding: 8px; font-size:11px;"><a target="_blank" href="{}/website_custom_bta/subscribe?list_id={}&email={}" style="color: #875A7B;">{}</a></td></tr>'.format(
             base_url,
             list_id,
-            partner.email if partner else self.email_to,
+            email_to,
             _('Subscribe to our newsletter'),
         )        
 

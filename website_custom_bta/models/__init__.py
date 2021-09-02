@@ -3,3 +3,4 @@
 
 from . import res_partner
 from . import mail_mail
+from . import crm_lead

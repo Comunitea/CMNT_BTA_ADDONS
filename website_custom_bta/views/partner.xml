@@ -12,8 +12,8 @@
             <page name='internal_notes' position="after">
                 <page string="RGPD" name="rgpd">
                     <group>
-                        <field name="rgpd_acceptance"/>
-                        <field name="rgpd_acceptance_date"/>
+                        <field name="rgpd_acceptance" readonly="1"/>
+                        <field name="rgpd_acceptance_date" readonly="1"/>
                     </group>
                 </page>
             </page>

@@ -8,6 +8,7 @@
     "website": "https://github.com/Comunitea/CMNT_BTA_ADDONS",
     "category": "Custom",
     "depends": [
+        "crm",
         "website_sale",
         "website_hr_recruitment",
         "event_sale",
