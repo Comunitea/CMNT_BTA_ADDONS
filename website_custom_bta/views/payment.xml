@@ -10,7 +10,7 @@
             <div t-if="not order.partner_id.rgpd_acceptance" class="col-12 custom-control custom-checkbox float-right mt-2 oe_accept_cgv_button">
                 <input type="checkbox" id="checkbox_rgpd_acceptance" class="custom-control-input" required="required"/>
                 <label for="checkbox_rgpd_acceptance" class="custom-control-label">
-                    I agree to the <a target="_BLANK" href="/rgpd">terms of the RGPD</a>
+                    I agree to the <a target="_BLANK" href="/politica-de-privacidad">terms of the RGPD</a>
                 </label>
             </div>
         </xpath>
