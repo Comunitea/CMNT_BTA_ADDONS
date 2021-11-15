@@ -6,7 +6,7 @@
 <odoo>
     <template id="assets_frontend" inherit_id="web.assets_frontend">
         <xpath expr="script[last()]" position="after">
-            <script type="text/javascript" src="/website_custom_bta/static/src/js/payment_form.js"></script>
+            <script type="text/javascript" src="/website_rgpd_custom/static/src/js/payment_form.js"></script>
         </xpath>
     </template>
 </odoo>

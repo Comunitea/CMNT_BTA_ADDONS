@@ -1,4 +1,4 @@
-odoo.define('website_custom_bta.payment_form', function (require) {
+odoo.define('website_rgpd_custom.payment_form', function (require) {
     "use strict";
     require("web.dom_ready")
     
@@ -32,6 +32,7 @@ odoo.define('website_custom_bta.payment_form', function (require) {
         toggleDisplayStatus: function (ev) {
             var self = this;
             var input = ev.target;
+            console.log("input => ", input);
             if ($(input).is(":checked") && $('#o_payment_form_pay').is(':disabled')) {
                 $('#o_payment_form_pay').attr('disabled', false);
             } else if (!$(input).is(":checked") && !$('#o_payment_form_pay').is(':disabled')){

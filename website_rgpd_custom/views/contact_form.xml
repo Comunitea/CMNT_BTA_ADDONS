@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    © 2021 Comunitea
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <template id="website_crm_contactus_form_inherit_rgpd" inherit_id="website_crm.contactus_form" name="RGPD acceptance"  customize_show="True" active="False">
+        <xpath expr="//form/div[hasclass('form-group')][last()]" position="before">
+            <div class="form-group row form-field o_website_form_required_custom">
+                <div class="offset-lg-3 offset-md-4 col-md-8 col-lg-7">
+                    <input type="checkbox" id="checkbox_rgpd_acceptance" name="checkbox_rgpd_acceptance" class="o_website_form_input custom-control-input" required="required"/>
+                    <label for="checkbox_rgpd_acceptance" class="custom-control-label">
+                        I agree to the <a target="_BLANK" href="/politica-de-privacidad">terms of the RGPD</a>
+                    </label>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
