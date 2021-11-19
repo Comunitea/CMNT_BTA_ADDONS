@@ -5,11 +5,11 @@
 -->
 <odoo>
 
-    <record id="crm_crm_case_form_view_oppor_inherit_rgpd" model="ir.ui.view">
-        <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <page name='lead' position="after">
+            <page name='internal_notes' position="after">
                 <page string="RGPD" name="rgpd">
                     <group>
                         <field name="rgpd_acceptance" readonly="1"/>

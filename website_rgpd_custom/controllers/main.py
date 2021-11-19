@@ -1,26 +1,26 @@
-# © 2021 Comunitea
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# -*- coding: utf-8 -*-
 from odoo import http
+from odoo.tools.translate import _
 from odoo.http import request
 from datetime import datetime
-from werkzeug.exceptions import BadRequest
-
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.mass_mailing.controllers.main import MassMailController
+from odoo.addons.connecto.controllers.main import WebsiteConatctUsCreate
 
 
-class WebsiteSaleBta(WebsiteSale):
+class WebsiteContactUsCreate(WebsiteConatctUsCreate):
 
-    @http.route()
-    def payment_transaction(self, *args, **kwargs):
-        res = super(WebsiteSaleBta, self).payment_transaction(*args, **kwargs)
-
-        order = request.website.sale_get_order()
-        if order and order.partner_id and not order.partner_id.rgpd_acceptance:
-            order.partner_id.write({
-                'rgpd_acceptance': True,
-                'rgpd_acceptance_date': datetime.today(),
-            })
-
-        return res
-
+    @http.route('/contact_us_action', type='json', auth='public', website=True)
+    def create_subscribe(self, **data):
+        data = data and data['datas']
+        res = dict()
+        for d in eval(data):
+            res[d.get('name')] = d.get('value')
+        print("res: {}".format(res))
+        subscribe = request.env['crm.lead'].sudo().create({
+            'name': res.get('name'),
+            'email_from': res.get('email'),
+            'description': res.get('subject') + ' : ' + res.get('message'),
+            'rgpd_acceptance': res.get('checkbox_rgpd_acceptance'),
+            'rgpd_acceptance_date': datetime.today() if res.get('checkbox_rgpd_acceptance') else None
+        })
+        if not subscribe:
+            return False

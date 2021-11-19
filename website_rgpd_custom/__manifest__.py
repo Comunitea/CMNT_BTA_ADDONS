@@ -8,15 +8,13 @@
     "website": "www.comunitea.com",
     "category": "Custom",
     "depends": [
-        "website_crm",
-        "website_sale",
-        "payment"
+        "website",
+        "connecto",
     ],
     "license": "LGPL-3",
     "data": [
-        "views/payment.xml",
-        "views/assets.xml",
         "views/partner.xml",
+        "views/crm_lead.xml",
         "views/contact_form.xml",
     ],
 }
